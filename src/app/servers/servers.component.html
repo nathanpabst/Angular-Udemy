@@ -1,2 +1,13 @@
+<!--use square brackets to bind to a property-->
+<button
+        class="btn btn-primary"
+        [disabled]="!allowNewServer"
+>
+  Add Server
+</button>
+
+<!--using string interpolation-->
+<p>{{ allowNewServer }}</p>
+
 <app-server></app-server>
 <app-server></app-server>
