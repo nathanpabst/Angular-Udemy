@@ -1,13 +1,12 @@
 <!--use square brackets to bind to a property-->
+<!--angular syntax for event binding is (). specify the name of the event in between the parentheses and the code/method you want to execute in between the ""-->
 <button
         class="btn btn-primary"
         [disabled]="!allowNewServer"
+        (click)="onCreateServer()"
 >
   Add Server
 </button>
-
-<!--using string interpolation-->
-<p>{{ allowNewServer }}</p>
-
+<p>{{serverCreationStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
