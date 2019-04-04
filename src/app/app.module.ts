@@ -7,6 +7,8 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningMessageComponent } from './warning-message/warning-message.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { MorePracticeComponent } from './more-practice/more-practice.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MorePracticeComponent } from './more-practice/more-practice.component';
     ServersComponent,
     WarningMessageComponent,
     SuccessMessageComponent,
-    MorePracticeComponent
+    MorePracticeComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,

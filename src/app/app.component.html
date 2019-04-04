@@ -1,51 +1,11 @@
 <div class="container">
+  <app-cockpit></app-cockpit>
+  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <h3>In the component</h3>
-      <hr />
-      <app-servers></app-servers>
-      <app-warning-message></app-warning-message>
-      <app-success-message></app-success-message>
-      <app-more-practice></app-more-practice>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <label>Username</label>
-            <input type="text"
-                   name="name"
-                   value=""
-                   class="form-control"
-                   [(ngModel)]="username" />
-            <p>{{ username }}</p>
-            <button class="btn btn-primary"
-                    [disabled]="username === '' "
-                    (click)="username = ''">
-              Reset User
-            </button>
-          </div>
-        </div>
+      <app-server-element 
+        *ngFor="let serverElement of serverElements"
+        [element]="serverElement"></app-server-element> 
       </div>
-      <hr />
-      <!--<button
-          class="btn btn-primary"
-          (click)="showSecret = !showSecret"
-          >
-    Display Details
-  </button>-->
-      <button class="btn btn-primary"
-              (click)="onToggleDetails()">
-        Display Details
-      </button>
-      <p *ngIf="showSecret">Secret Password = Tuna</p>
-
-      <div
-           *ngFor="let logItem of log"
-           [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
-           [ngClass]="{'white-text' : logItem >= 5}">
-        {{logItem}}
-      </div>
-
     </div>
   </div>
-</div>
