@@ -5,10 +5,11 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   templateUrl: './cockpit.component.html',
   styleUrls: ['./cockpit.component.css']
 })
+//@Output()...passing an event out of the component. EventEmitter enables other components to listen for events
 export class CockpitComponent implements OnInit {
   @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
-  @Output() blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
-  newServerName = '';
+  @Output('bpCreated') blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+  //newServerName = ''; using local ref, so this is no longer needed
   newServerContent = '';
   
   constructor() { }
@@ -16,16 +17,16 @@ export class CockpitComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddServer() {
+  onAddServer(nameInput: HTMLInputElement) {
    this.serverCreated.emit({
-     serverName: this.newServerName,
+     serverName: nameInput.value,
      serverContent: this.newServerContent
     });
   }
 
-  onAddBlueprint() {
+  onAddBlueprint(nameInput: HTMLInputElement) {
     this.blueprintCreated.emit({
-      serverName: this.newServerName,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
   }
