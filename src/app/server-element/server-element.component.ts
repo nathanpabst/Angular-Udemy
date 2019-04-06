@@ -1,4 +1,19 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  Input, 
+  ViewEncapsulation,
+  OnChanges,
+  SimpleChanges, 
+  DoCheck, 
+  AfterContentInit, 
+  AfterContentChecked, 
+  AfterViewInit, 
+  AfterViewChecked,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+ } from '@angular/core';
 
 
 @Component({
@@ -8,15 +23,63 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated
 })
 
-export class ServerElementComponent implements OnInit {
-  //typescript syntax for defining a type. allows us to access the info in the html file.
-  //@Input() decorator allows parent component to be able to bind to a property
-  //@Input('srvElement') ...adding an alias to a custom prop
+export class ServerElementComponent implements 
+  OnInit, 
+  OnChanges, 
+  DoCheck, 
+  AfterContentInit, 
+  AfterContentChecked, 
+  AfterViewInit, 
+  AfterViewChecked,
+  OnDestroy,
+  ViewChild {
+  descendants: boolean;
+  first: boolean;
+  read: any;
+  isViewQuery: boolean;
+  selector: any;
   @Input('srvElement') element: {type: string, name: string, content: string};
+  @Input() name: string;
+  @ViewChild('heading') header: ElementRef;
 
-  constructor() { }
+  constructor() { 
+    console.log('constructor called here');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges called here');
+    console.log(changes);
+  }
 
   ngOnInit() {
+    console.log('ngOnInit called here');
+    console.log('text content here: ' + this.header.nativeElement.textContent);
+  }
+
+  ngDoCheck() {
+    console.log('ngDoCheck called here');
+  }
+
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit called here');
+  }
+
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked called here');
+  }
+
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit called here');
+    console.log('text content here: ' + this.header.nativeElement.textContent);
+
+  }
+
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked called here');
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy called here');
   }
 
 }
