@@ -1,4 +1,11 @@
 <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
   <app-cockpit
     (serverCreated)="onServerAdded($event)"
     (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
@@ -21,4 +28,4 @@
       </app-server-element> 
       </div>
     </div>
-  </div>
+  </div> -->
