@@ -7,17 +7,23 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  oddNumbers: number[] = [];
-  evenNumbers: number[] = [];
+  //numbers = [1,2,3,4,5];
+  oddNumbers = [1,3,5];
+  evenNumbers = [2,4];
+  onlyOdd = false;
 
-  onIntervalFired(firedNumber: number) {
-    //console.log(firedNumber);
-    if (firedNumber % 2 === 0) {
-      this.evenNumbers.push(firedNumber);
-    } else {
-      this.oddNumbers.push(firedNumber);
-    }
-  }
+
+  // oddNumbers: number[] = [];
+  // evenNumbers: number[] = [];
+
+  // onIntervalFired(firedNumber: number) {
+  //   //console.log(firedNumber);
+  //   if (firedNumber % 2 === 0) {
+  //     this.evenNumbers.push(firedNumber);
+  //   } else {
+  //     this.oddNumbers.push(firedNumber);
+  //   }
+  // }
 }
 
 
