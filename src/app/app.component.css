@@ -1,8 +1,16 @@
-h3 {
+/* h3 {
   color: darkblue;
 }
 
 .white-text {
   color: white;
 
+} */
+
+.container {
+  margin-top: 30px;
+}
+
+.odd {
+  color: red;
 }
